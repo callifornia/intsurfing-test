@@ -1,6 +1,14 @@
+import service.DataReader
+import DataReader._
+import dao.CompanyRepository._
+
+
 object Main {
+  val fileName = "data.csv"
   def main(args: Array[String]): Unit = {
-    println("Hi there ...")
-    println("Hi there ...")
+    val companies = readData(fileName)
+    persist(companies)
+
+    println(companies)
   }
 }
